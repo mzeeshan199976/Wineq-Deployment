@@ -36,13 +36,13 @@ jobs:
       run: |
         pytest -v
     
-    - name: Deploy to Heroku
-      env:
-        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      run: |
-        git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
-        git push heroku HEAD:master -f
+    # - name: Deploy to Heroku
+    #   env:
+    #     HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
+    #     HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+    #   run: |
+    #     git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
+    #     git push heroku HEAD:master -f
 
     - name: Release a Docker container to Heroku. # Your custom step name
       uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
