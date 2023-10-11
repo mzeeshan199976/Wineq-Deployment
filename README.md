@@ -1,3 +1,6 @@
+I have done this MLOps mini project by following Tutorial on youtube.
+
+
 create env 
 
 ```bash
